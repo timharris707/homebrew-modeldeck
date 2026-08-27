@@ -19,9 +19,23 @@ cask "modeldeck" do
 
   uninstall quit: "app.modeldeck.mac"
 
+  zap launchctl: "ai.hermes.modeldeck",
+      trash:     [
+        "~/Library/Application Support/ModelDeck",
+        "~/Library/Caches/app.modeldeck.mac",
+        "~/Library/HTTPStorages/app.modeldeck.mac",
+        "~/Library/LaunchAgents/ai.hermes.modeldeck.plist",
+        "~/Library/Preferences/app.modeldeck.mac.plist",
+        "~/Library/Saved Application State/app.modeldeck.mac.savedState",
+        "~/Library/WebKit/app.modeldeck.mac",
+      ]
+
   caveats <<~EOS
     ModelDeck keeps its accounts and settings in
     ~/Library/Application Support/ModelDeck. Uninstalling the app leaves
     that data in place so a reinstall picks up where you left off.
+    `brew uninstall --zap modeldeck` deletes it, including any managed
+    account profiles. Keychain items must be removed by hand; see the
+    Uninstall section of the ModelDeck README.
   EOS
 end
