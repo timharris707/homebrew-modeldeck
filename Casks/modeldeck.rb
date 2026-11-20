@@ -1,6 +1,6 @@
 cask "modeldeck" do
-  version "1.1.26"
-  sha256 "31325e92f21cdf317bef08d58582ad18ef3f2bf5d7a01e7f7bbf2f354d7fa1ae"
+  version "1.1.27"
+  sha256 "4eb5effe436b457e8ba190d1829102f3e96ecdfa08422b982e2187e146653f1f"
 
   url "https://github.com/timharris707/modeldeck/releases/download/v#{version}/ModelDeck-#{version}.dmg"
   name "ModelDeck"
